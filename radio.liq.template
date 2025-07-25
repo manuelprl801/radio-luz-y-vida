@@ -1,0 +1,15 @@
+set("log.stdout", true)
+set("server.telnet", false)
+
+music = playlist(mode="random", reload=3600, "/music")
+
+output.icecast(%mp3(bitrate=128),
+  host="localhost",
+  port={{PORT}},
+  password="sourcepass",
+  mount="/radio.mp3",
+  name="Radio Luz y Vida en Jesucristo - Yanamango (Experimento)",
+  description="Emitiendo (si Render no duerme)",
+  genre="Cristiano",
+  url="http://example.com",
+  music)
